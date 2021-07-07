@@ -1,19 +1,42 @@
 label {
   font-size: 1.2rem;
 }
-
-.container {
-  background-color: #202020;
+.close {
+  border-radius: 20px;
+  padding: 0.5rem 0.8rem;
+  border: none;
+  background-color: rgb(146, 146, 146);
+}
+.modal {
+  background-color: #20202094;
   min-height: 50vh;
-  width: 50%;
+  width: 60%;
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
   font-size: calc(10px + 2vmin);
   color: #bec2c7;
   position: absolute;
-  padding: 15px;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.info {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 1rem;
+  flex-direction: column;
+}
+.container {
+  background-color: #20202052;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #bec2c7;
+  position: absolute;
   border-radius: 10px;
 }
 .App-logo {
@@ -28,7 +51,7 @@ label {
 }
 
 .App {
-  background-color: #141414;
+  background-color: #2e2e2e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
