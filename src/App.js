@@ -5,6 +5,7 @@ import React, { useState } from "react";
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [value, setValue] = useState("");
+  const isValid = value.length === 8;
   return (
     <div className="App">
       <h1>Localizando</h1>
@@ -16,7 +17,10 @@ function App() {
           value={value}
           onChange={(e) => setValue(e.target.value)}
         />
-        <button onClick={() => setIsOpen(true)}> Pesquisar </button>
+        <button onClick={() => setIsOpen(true)} disabled={!isValid}>
+          {" "}
+          Pesquisar{" "}
+        </button>
       </label>
       {isOpen ? <Modal zip={value} onClose={() => setIsOpen(false)} /> : null}
     </div>

@@ -1,5 +1,6 @@
 {
   "name": "search-zip",
+  "homepage": "https://joel-leal.github.io/search-zip/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

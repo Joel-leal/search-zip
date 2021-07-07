@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 function Modal({ onClose = () => {}, zip = "" }) {
+  const [returnError, setReturnError] = useState("");
   const [zipInfo, setZipInfo] = useState({
     cep: "carregando...",
     logradouro: "carregando...",
@@ -17,7 +18,8 @@ function Modal({ onClose = () => {}, zip = "" }) {
   useEffect(() => {
     fetch(`https://viacep.com.br/ws/${zip}/json/`)
       .then((response) => response.json())
-      .then((data) => setZipInfo(data));
+      .then((data) => setZipInfo(data))
+      .catch((error) => setReturnError(`${zip} não encontrado`));
   }, [zip]);
   return (
     <div className="container">
@@ -33,6 +35,7 @@ function Modal({ onClose = () => {}, zip = "" }) {
         allowFullScreen
         src={`https://www.google.com/maps/embed/v1/place?q=${zip}&key=AIzaSyDaMzkE0Xlo_PeFAgEb0CYvV461AMf5J1k`}
       ></iframe>
+      <p>{returnError}</p>
       <button onClick={onClose}>fechar</button>
     </div>
   );
