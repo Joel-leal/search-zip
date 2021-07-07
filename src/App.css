@@ -3,7 +3,7 @@ label {
 }
 
 .container {
-  background-color: #373738;
+  background-color: #202020;
   min-height: 50vh;
   width: 50%;
   display: flex;
@@ -28,7 +28,7 @@ label {
 }
 
 .App {
-  background-color: #202020;
+  background-color: #141414;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

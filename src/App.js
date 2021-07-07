@@ -1,18 +1,24 @@
 import "./App.css";
-import Response from "./Response";
+import Modal from "./Modal";
 import React, { useState } from "react";
 
 function App() {
-  const [getCep, setStateCep] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [value, setValue] = useState("");
   return (
     <div className="App">
       <h1>Localizando</h1>
       <div>Digite o CEP</div>
       <label>
-        <input type="text" name="name" />
-        <button onClick={() => setStateCep(true)}> Pesquisar </button>
+        <input
+          type="text"
+          name="name"
+          value={value}
+          onChange={(e) => setValue(e.target.value)}
+        />
+        <button onClick={() => setIsOpen(true)}> Pesquisar </button>
       </label>
-      {getCep ? <Response onClose={() => setStateCep(false)} /> : null}
+      {isOpen ? <Modal zip={value} onClose={() => setIsOpen(false)} /> : null}
     </div>
   );
 }
